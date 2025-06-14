@@ -25,34 +25,14 @@ def connect_wifi(ssid, password):
     print("\nConnected! IP:", wlan.ifconfig()[0])
 
 # ================================================ Welcome Animation =============================================================
-# def welcome():
-#     oled.fill(0)
-#     while not wlan.isconnected():
-#         oled.text("Connecting.....",0,0)
-#         oled.show()
-#     oled.text("connected",0,0); oled.text("with Internet !",0,10)
-#     oled.show()
-#     sleep(3); oled.fill(0)
-#     for y in range(-20, 10):  
-#         oled.fill(0)
-#         oled.text("Welcome", 35, y)
-#         oled.text("PROJECT X", 25, y + 20)
-#         oled.show()
-#         sleep(0.05)
-#     sleep(1)
-# 
-#     for i in range(3):
-#         oled.fill_rect(25, y + 20, 80, 10, 0)
-#         oled.show()
-#         sleep(0.1)
-#         oled.text("PROJECT X", 25, y + 20)
-#         oled.show()
-#         sleep(0.1)
-#     sleep(0.5)
 def welcome():
     oled.fill(0)
-
-    # Step 1: Show "Welcome PROJECT X" animation
+    oled.text("Project by", 0, 0)
+    oled.text("Monamukil", 0, 10)
+    oled.show()
+    sleep(2)
+    oled.fill(0)
+    #  Show "Welcome PROJECT X" animation
     for y in range(-20, 10):  
         oled.fill(0)
         oled.text("Welcome", 35, y)
@@ -71,7 +51,7 @@ def welcome():
         sleep(0.1)
     sleep(0.5)
 
-    # Step 2: Show "Connecting..." while waiting for Wi-Fi
+    # Show "Connecting..." while waiting for Wi-Fi
     oled.fill(0)
     oled.text("Connecting...", 0, 0)
     oled.show()
@@ -79,7 +59,7 @@ def welcome():
     while not wlan.isconnected():
         sleep(0.2)
 
-    # Step 3: Show connected status with IP
+    # Show connected status with IP
     oled.fill(0)
     oled.text("Connected", 0, 0)
     oled.text("with IP:", 0, 10)
@@ -145,9 +125,11 @@ def relay_control(data):
             relays[relay_number].value(0 if state else 1)
 
 # ====================================================== MAIN ====================================================================
-connect_wifi("Blaze", "1234567890")
+connect_wifi("Blaze", "Monamukil")
 assign_relay(relay)
-
+# contact 
+# mukil11ss@gmail.com
+# 8883681431
 try:
     welcome()
     while True:
