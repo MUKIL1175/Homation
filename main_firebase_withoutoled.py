@@ -43,7 +43,7 @@ def assign_relay(relay):
 
 # =========================================== Data Fetching from Firebase DB ======================================================
 def get_firebase_data():
-    url = "https://nfc-esp32-default-rtdb.asia-southeast1.firebasedatabase.app/relays.json"
+    url = "https://nfc-xxxxx-default-rtdb.asia-southeast1.firebasedatabase.app/relays.json"
     try:
         response = urequests.get(url)
         if response.status_code == 200:
@@ -69,7 +69,7 @@ def relay_control(data):
             relays[relay_number].value(0 if state else 1)
 
 # ====================================================== MAIN ====================================================================
-connect_wifi("Blaze", "KAVINMUKIL")
+connect_wifi("Blaze", "Monamukil")
 assign_relay(relay)
 
 try:
